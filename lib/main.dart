@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/form.dart';
+import 'package:flutter_tutorial/page/form.dart';
+import 'package:flutter_tutorial/page/to_do_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,20 +52,31 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               title: const Text('Counter'),
               onTap: () {
-                // Routing the menu to the main page
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyHomePage()),
-                );
+                Navigator.pop(context);
+                // // Routing the menu to the main page
+                // Navigator.pushReplacement(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => const MyHomePage()),
+                // );
               },
             ),
             ListTile(
               title: const Text('Form'),
               onTap: () {
                 // Routing the menu to the form page
-                Navigator.pushReplacement(
+                Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const MyFormPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('To Do'),
+              onTap: () {
+                // Route menu ke halaman to do
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ToDoPage()),
                 );
               },
             ),
